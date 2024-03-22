@@ -57,7 +57,7 @@ public class bmi_activity extends AppCompatActivity {
 
         intBmi = intWeight / (intHeight*intHeight);
 
-        bmi = Float.toString(intBmi);
+        bmi = String.format("%.2f", intBmi);
 
         if (intBmi < 16) {
             bmiCategory.setText("Severe Thinness");
