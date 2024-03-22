@@ -25,7 +25,7 @@ public class MainActivity extends AppCompatActivity {
     int weight;
     int age = 22;
     int currentProgress;
-    String minProgress = "170";
+    String inProgress = "170";
     String typeOfUser = "0";
     String weight2 = "55";
     String age2 = "22";
@@ -65,7 +65,62 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-        
+        seekBarForHeight.setMax(300);
+        seekBarForHeight.setProgress(170);
+        seekBarForHeight.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener() {
+            @Override
+            public void onProgressChanged(SeekBar seekBar, int i, boolean b) {
+                currentProgress = i;
+                inProgress = String.valueOf(currentProgress);
+                currentHeight.setText(inProgress);
+            }
+
+            @Override
+            public void onStartTrackingTouch(SeekBar seekBar) {
+
+            }
+
+            @Override
+            public void onStopTrackingTouch(SeekBar seekBar) {
+
+            }
+        });
+
+        incrementAge.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                age = age + 1;
+                age2 = String.valueOf(age);
+                currentAge.setText(age2);
+            }
+        });
+
+        decrementAge.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                age = age - 1;
+                age2 = String.valueOf(age);
+                currentAge.setText(age2);
+            }
+        });
+
+        incrementWeight.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                weight = weight + 1;
+                weight2 = String.valueOf(weight);
+                currentAge.setText(weight2);
+            }
+        });
+
+        decrementWeight.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                weight = weight - 1;
+                weight2 = String.valueOf(weight);
+                currentAge.setText(weight2);
+            }
+        });
 
         calculateBmi.setOnClickListener(new View.OnClickListener() {
             @Override
