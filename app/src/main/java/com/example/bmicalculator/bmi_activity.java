@@ -53,7 +53,40 @@ public class bmi_activity extends AppCompatActivity {
         intBmi = intWeight / (intHeight*intHeight);
 
         bmi = Float.toString(intBmi);
-        
+
+        if (intBmi < 16) {
+            bmiCategory.setText("Severe Thinness");
+            background.setBackgroundColor(Color.RED);
+            imageView.setImageResource(R.drawable.cross);
+        }
+        else if (intBmi < 16.9 && intBmi > 16) {
+            bmiCategory.setText("Moderate Thinness");
+            background.setBackgroundColor(Color.RED);
+            imageView.setImageResource(R.drawable.warhing);
+        }
+        else if (intBmi < 18.4 && intBmi > 17) {
+            bmiCategory.setText("Mild Thinness");
+            background.setBackgroundColor(Color.RED);
+            imageView.setImageResource(R.drawable.warning);
+        }
+        else if (intBmi < 25 && intBmi > 18.4) {
+            bmiCategory.setText("Normal");
+            background.setBackgroundColor(Color.YELLOW);
+            imageView.setImageResource(R.drawable.ok);
+        }
+        else if (intBmi < 29.4 && intBmi > 25) {
+            bmiCategory.setText("Over Weight");
+            background.setBackgroundColor(Color.RED);
+            imageView.setImageResource(R.drawable.warning);
+        }
+        else {
+            bmiCategory.setText("Obese Class I");
+            background.setBackgroundColor(Color.RED);
+            imageView.setImageResource(R.drawable.warning);
+        }
+
+        gender.setText(intent.getStringExtra("gender"));
+        bmiDisplay.setText(bmi);
 
         getSupportActionBar().hide();
         recalculateBmi =  findViewById(R.id.recalculatebmi);
