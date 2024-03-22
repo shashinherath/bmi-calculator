@@ -149,8 +149,6 @@ public class MainActivity extends AppCompatActivity {
                     intent.putExtra("weight", weight2);
                     intent.putExtra("age", age2);
 
-
-
                     startActivity(intent);
                 }
             }
