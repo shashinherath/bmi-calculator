@@ -1,6 +1,7 @@
 package com.example.bmicalculator;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.content.ContextCompat;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -46,6 +47,25 @@ public class MainActivity extends AppCompatActivity {
         male = findViewById(R.id.male);
         female = findViewById(R.id.female);
 
+        male.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                male.setBackground(ContextCompat.getDrawable(getApplicationContext(),R.drawable.male_female_focus));
+                female.setBackground(ContextCompat.getDrawable(getApplicationContext(),R.drawable.male_female_not_focus));
+                typeOfUser = "Male";
+            }
+        });
+
+        female.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                female.setBackground(ContextCompat.getDrawable(getApplicationContext(),R.drawable.male_female_focus));
+                male.setBackground(ContextCompat.getDrawable(getApplicationContext(),R.drawable.male_female_not_focus));
+                typeOfUser = "Female";
+            }
+        });
+
+        
 
         calculateBmi.setOnClickListener(new View.OnClickListener() {
             @Override
