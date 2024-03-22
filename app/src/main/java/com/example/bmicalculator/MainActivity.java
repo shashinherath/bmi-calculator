@@ -11,6 +11,7 @@ import android.widget.ImageView;
 import android.widget.RelativeLayout;
 import android.widget.SeekBar;
 import android.widget.TextView;
+import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -125,8 +126,33 @@ public class MainActivity extends AppCompatActivity {
         calculateBmi.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(MainActivity.this, bmi_activity.class);
-                startActivity(intent);
+                if (typeOfUser.equals("0")) {
+                    Toast.makeText(getApplicationContext(), "Select Your Gender First", Toast.LENGTH_SHORT).show();
+                }
+
+                else if (inProgress.equals("0")) {
+                    Toast.makeText(getApplicationContext(), "Select Your Height First", Toast.LENGTH_SHORT).show();
+                }
+
+                else if (age == 0 || age < 0) {
+                    Toast.makeText(getApplicationContext(), "Age Is Incorrect", Toast.LENGTH_SHORT).show();
+                }
+
+                else if (weight == 0 || weight < 0) {
+                    Toast.makeText(getApplicationContext(), "Weight Is Incorrect", Toast.LENGTH_SHORT).show();
+                }
+
+                else {
+                    Intent intent = new Intent(MainActivity.this, bmi_activity.class);
+                    intent.putExtra("gender", typeOfUser);
+                    intent.putExtra("height", inProgress);
+                    intent.putExtra("weight", weight2);
+                    intent.putExtra("age", age2);
+
+
+
+                    startActivity(intent);
+                }
             }
         });
     }
