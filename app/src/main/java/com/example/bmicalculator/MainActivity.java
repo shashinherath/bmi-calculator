@@ -23,7 +23,7 @@ public class MainActivity extends AppCompatActivity {
     SeekBar seekBarForHeight;
     RelativeLayout male, female;
 
-    int weight;
+    int weight = 55;
     int age = 22;
     int currentProgress;
     String inProgress = "170";
@@ -45,6 +45,7 @@ public class MainActivity extends AppCompatActivity {
         decrementAge = findViewById(R.id.decrementage);
         incrementWeight = findViewById(R.id.incrementweight);
         decrementWeight = findViewById(R.id.decrementweight);
+        seekBarForHeight = findViewById(R.id.seekbarforheight);
         male = findViewById(R.id.male);
         female = findViewById(R.id.female);
 
@@ -110,7 +111,7 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View view) {
                 weight = weight + 1;
                 weight2 = String.valueOf(weight);
-                currentAge.setText(weight2);
+                currentWeight.setText(weight2);
             }
         });
 
@@ -119,7 +120,7 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View view) {
                 weight = weight - 1;
                 weight2 = String.valueOf(weight);
-                currentAge.setText(weight2);
+                currentWeight.setText(weight2);
             }
         });
 

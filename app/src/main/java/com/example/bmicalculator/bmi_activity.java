@@ -47,6 +47,9 @@ public class bmi_activity extends AppCompatActivity {
         imageView = findViewById(R.id.imageview);
         recalculateBmi = findViewById(R.id.recalculatebmi);
 
+        height = intent.getStringExtra("height");
+        weight = intent.getStringExtra("weight");
+
         intHeight = Float.parseFloat(height);
         intWeight = Float.parseFloat(weight);
 
@@ -68,7 +71,7 @@ public class bmi_activity extends AppCompatActivity {
         }
         else if (intBmi < 18.4 && intBmi > 17) {
             bmiCategory.setText("Mild Thinness");
-            background.setBackgroundColor(Color.RED);
+            background.setBackgroundColor(Color.YELLOW);
             imageView.setImageResource(R.drawable.warning);
         }
         else if (intBmi < 25 && intBmi > 18.4) {
@@ -77,12 +80,12 @@ public class bmi_activity extends AppCompatActivity {
         }
         else if (intBmi < 29.4 && intBmi > 25) {
             bmiCategory.setText("Over Weight");
-            background.setBackgroundColor(Color.RED);
+            background.setBackgroundColor(Color.YELLOW);
             imageView.setImageResource(R.drawable.warning);
         }
         else {
             bmiCategory.setText("Obese Class I");
-            background.setBackgroundColor(Color.RED);
+            background.setBackgroundColor(Color.YELLOW);
             imageView.setImageResource(R.drawable.warning);
         }
 
