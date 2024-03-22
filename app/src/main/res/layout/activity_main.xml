@@ -100,7 +100,6 @@
         android:layout_centerHorizontal="true"
         android:layout_marginLeft="25dp"
         android:layout_marginRight="25dp"
-        android:layout_marginBottom="50dp"
         android:background="@drawable/cardbackground">
 
 
@@ -165,7 +164,7 @@
         android:layout_height="150dp"
         android:layout_below="@id/heightlayout"
         android:layout_marginLeft="20dp"
-        android:layout_marginTop="85dp"
+        android:layout_marginTop="35dp"
         android:layout_marginRight="20dp"
         android:layout_marginBottom="20dp"
         android:layout_toStartOf="@id/centerverticalline"
@@ -237,40 +236,40 @@
     </RelativeLayout>
 
     <RelativeLayout
+        android:id="@+id/age"
         android:layout_width="150dp"
         android:layout_height="150dp"
-        android:layout_toEndOf="@id/centerverticalline"
         android:layout_below="@id/heightlayout"
-        android:layout_marginBottom="20dp"
-        android:layout_marginTop="85dp"
-        android:background="@drawable/cardbackground"
-        android:layout_marginRight="20dp"
         android:layout_marginLeft="20dp"
-        android:id="@+id/age">
+        android:layout_marginTop="35dp"
+        android:layout_marginRight="20dp"
+        android:layout_marginBottom="20dp"
+        android:layout_toEndOf="@id/centerverticalline"
+        android:background="@drawable/cardbackground">
 
         <TextView
+            android:id="@+id/textage"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:textColor="@color/white"
+            android:layout_marginTop="15dp"
             android:text="Age"
-            android:id="@+id/textage"
             android:textAlignment="center"
-            android:textStyle="bold"
+            android:textColor="@color/white"
             android:textSize="18sp"
-            android:layout_marginTop="15dp">
+            android:textStyle="bold">
 
         </TextView>
 
         <TextView
+            android:id="@+id/currentage"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:id="@+id/currentage"
+            android:layout_centerInParent="true"
             android:text="20"
+            android:textAlignment="center"
             android:textColor="@color/white"
             android:textSize="30sp"
-            android:textStyle="bold"
-            android:layout_centerInParent="true"
-            android:textAlignment="center">
+            android:textStyle="bold">
 
         </TextView>
 
@@ -279,8 +278,8 @@
             android:layout_height="wrap_content"
             android:layout_alignParentBottom="true"
             android:layout_marginStart="20dp"
-            android:background="@drawable/plus_minus"
-            android:layout_marginBottom="10dp">
+            android:layout_marginBottom="10dp"
+            android:background="@drawable/plus_minus">
 
             <ImageView
                 android:id="@+id/decrementage"
@@ -295,11 +294,11 @@
         <RelativeLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
             android:layout_alignParentBottom="true"
             android:layout_marginEnd="20dp"
-            android:layout_alignParentEnd="true"
-            android:background="@drawable/plus_minus"
-            android:layout_marginBottom="10dp">
+            android:layout_marginBottom="10dp"
+            android:background="@drawable/plus_minus">
 
             <ImageView
                 android:id="@+id/incrementage"
@@ -317,10 +316,10 @@
         android:id="@+id/calculatebmi"
         android:layout_width="match_parent"
         android:layout_height="40dp"
-        android:layout_alignParentBottom="true"
         android:layout_marginLeft="20dp"
         android:layout_marginRight="20dp"
-        android:layout_marginBottom="15dp"
+        android:layout_below="@id/age"
+        android:layout_marginTop="35dp"
         android:background="@drawable/buttonbackground"
         android:text="Calculate Your BMI"
         android:textColor="@color/white"
